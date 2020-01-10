@@ -1,24 +1,24 @@
 # DNSLog
-±ğµÄÂÖ×ÓÊµÔÚÊÇÓÃ²»¶®£¬ÓÚÊÇ¾Í½è¼ø+Ğ´ÁË¸ö¼òµ¥µÄ¡£Ö÷ÒªÓÃÓÚÂ©¶´ÑéÖ¤¡£
+åˆ«çš„è½®å­å®åœ¨æ˜¯ç”¨ä¸æ‡‚ï¼Œäºæ˜¯å°±å€Ÿé‰´+å†™äº†ä¸ªç®€å•çš„ã€‚ä¸»è¦ç”¨äºæ¼æ´éªŒè¯ã€‚
 
-Ö÷ÒªÌá¹©ÒÔÏÂÁ½¸ö¹¦ÄÜ£º
-1. `python manager.py 0.0.0.0:80` Ò»¼ü²¿Êğ£¬°üÀ¨DNS·şÎñÆ÷¡£Òò´ËÖ»ĞèÒªÔÚÉêÇëÓòÃûµÄµØ·½ÉèÖÃºÃDNS½âÎöÂ·¾¶¡£
-2. Ìá¹©`/api/verify?q=ÓòÃû`½Ó¿Ú£¬Èç¹û¸Ã`ÓòÃû`È·Êµ±»·ÃÎÊ¹ı£¬Ôò·µ»Ø`{'data': 'Yes'}`£¬·ñÔò·µ»Ø`{'data': 'No'}`
-3. Ìá¹©`JWTToken` ÈÏÖ¤£¬Ö»ÔÊĞíÈÏÖ¤µÄÈËÊ¹ÓÃ`/api/verify?q=ÓòÃû`½Ó¿Ú
+ä¸»è¦æä¾›ä»¥ä¸‹ä¸¤ä¸ªåŠŸèƒ½ï¼š
+1. `python manager.py 0.0.0.0:80` ä¸€é”®éƒ¨ç½²ï¼ŒåŒ…æ‹¬DNSæœåŠ¡å™¨ã€‚å› æ­¤åªéœ€è¦åœ¨ç”³è¯·åŸŸåçš„åœ°æ–¹è®¾ç½®å¥½DNSè§£æè·¯å¾„ã€‚
+2. æä¾›`/api/verify?q=åŸŸå`æ¥å£ï¼Œå¦‚æœè¯¥`åŸŸå`ç¡®å®è¢«è®¿é—®è¿‡ï¼Œåˆ™è¿”å›`{'data': 'Yes'}`ï¼Œå¦åˆ™è¿”å›`{'data': 'No'}`
+3. æä¾›`JWTToken` è®¤è¯ï¼Œåªå…è®¸è®¤è¯çš„äººä½¿ç”¨`/api/verify?q=åŸŸå`æ¥å£
 
-4. **¼ÇµÃĞŞ¸Ä`logger.py`ºÍ`scripts/logger.py`ÖĞµÄÖ÷»úIP£¬ĞŞ¸ÄÎª `dnslogÖ÷»úIP`**
+4. **è®°å¾—ä¿®æ”¹`logger.py`å’Œ`scripts/logger.py`ä¸­çš„ä¸»æœºIPï¼Œä¿®æ”¹ä¸º `dnslogä¸»æœºIP`**
 
-## ²¿Êğ²½Öè
-Á½ÖÖ²¿Êğ·½°¸£ºÒ»ÖÖÊÇÖ±½ÓÂã±¼ÉÏ `python manager.py makemigrations`, `python manager.py migrate`, `python manager.py 0.0.0.0:80`£¬»µ´¦ÊÇ¾²Ì¬ÎÄ¼şÕÒ²»µ½£¬admin½çÃæÄÑ¿´£»ÁíÒ»ÖÖÔòÊÇÍ¨¹ıApache²¿Êğ£¬ÕâÀïÖ±½Ó½éÉÜµÚ¶şÖÖ¡£
+## éƒ¨ç½²æ­¥éª¤
+ä¸¤ç§éƒ¨ç½²æ–¹æ¡ˆï¼šä¸€ç§æ˜¯ç›´æ¥è£¸å¥”ä¸Š `python manager.py makemigrations`, `python manager.py migrate`, `python manager.py 0.0.0.0:80`ï¼Œåå¤„æ˜¯é™æ€æ–‡ä»¶æ‰¾ä¸åˆ°ï¼Œadminç•Œé¢éš¾çœ‹ï¼›å¦ä¸€ç§åˆ™æ˜¯é€šè¿‡Apacheéƒ¨ç½²ï¼Œè¿™é‡Œç›´æ¥ä»‹ç»ç¬¬äºŒç§ã€‚
 
-²¿ÊğÖ÷»úÊÇÔÚUbuntu 18ÉÏ£º
-1. °²×°apache2ÒÔ¼°Ïà¹Ø×é¼ş£º`apt-get install apache2 libapache2-mod-wsgi-py3`
-2. °²×°virtualenv£º`pip3 install virtualenv`
-3. ½«¸ÄÏîÄ¿·ÅÔÚ `/var/www` ÏÂ
-4. ÔÚ`/var/www/dnslog` ÏÂÔËĞĞ `virtualenv env`£¬²¢ÔËĞĞ `source /var/www/dnslog/env/bin/activate`
-5. ÔÚ`/var/www/dnslog/dnslog` ÏÂÔËĞĞ `pip install -r req.tt`
-6. ĞŞ¸Ä`/var/www/dnslog/dnslog/dnslog/setting.py` ÖĞµÄ `ALLOWED_HOSTS = []` ¸ÄÎª `ALLOWED_HOSTS = ['dnslogÖ÷»úIP']`£¬ÒÔ¼°`DEBUG=True`¸ÄÎª`DEBUG=False`
-7. ÅäÖÃapache£¬ `vim /etc/apache2/sites-avaliable/000-default.conf` Ìí¼ÓÈçÏÂĞĞ£º
+éƒ¨ç½²ä¸»æœºæ˜¯åœ¨Ubuntu 18ä¸Šï¼š
+1. å®‰è£…apache2ä»¥åŠç›¸å…³ç»„ä»¶ï¼š`apt-get install apache2 libapache2-mod-wsgi-py3`
+2. å®‰è£…virtualenvï¼š`pip3 install virtualenv`
+3. å°†æ”¹é¡¹ç›®æ”¾åœ¨ `/var/www` ä¸‹
+4. åœ¨`/var/www/dnslog` ä¸‹è¿è¡Œ `virtualenv env`ï¼Œå¹¶è¿è¡Œ `source /var/www/dnslog/env/bin/activate`
+5. åœ¨`/var/www/dnslog/dnslog` ä¸‹è¿è¡Œ `pip install -r req.tt`
+6. ä¿®æ”¹`/var/www/dnslog/dnslog/dnslog/setting.py` ä¸­çš„ `ALLOWED_HOSTS = []` æ”¹ä¸º `ALLOWED_HOSTS = ['dnslogä¸»æœºIP']`ï¼Œä»¥åŠ`DEBUG=True`æ”¹ä¸º`DEBUG=False`
+7. é…ç½®apacheï¼Œ `vim /etc/apache2/sites-avaliable/000-default.conf` æ·»åŠ å¦‚ä¸‹è¡Œï¼š
 ```
 <VirtualHost *:80>
         Alias /static /var/www/dnslog/dnslog/dnslog/static
@@ -38,26 +38,26 @@
         </Directory>
 </VirtualHost>
 ```
-8. ÔËĞĞ`python manager.py makemigrations`, `python manager.py migrate`, `python manager.py collectstatic`
-9. ÔËĞĞ `chown -R www-data:www-data /var/www/dnslog` 
-10. ÔËĞĞ`service apache start`
-11. ÓÉÓÚapacheÊÇwww-dataÈ¨ÏŞ£¬ÎŞ·¨°ó¶¨¶Ë¿Ú£¬ÊÖ¶¯ÔËĞĞ`nohup python manager.py runscript logger`¿ªÆôdns¼ÇÂ¼
-10. ¸ã¶¨
+8. è¿è¡Œ`python manager.py makemigrations`, `python manager.py migrate`, `python manager.py collectstatic`
+9. è¿è¡Œ `chown -R www-data:www-data /var/www/dnslog` 
+10. è¿è¡Œ`service apache start`
+11. ç”±äºapacheæ˜¯www-dataæƒé™ï¼Œæ— æ³•ç»‘å®šç«¯å£ï¼Œæ‰‹åŠ¨è¿è¡Œ`nohup python manager.py runscript logger`å¼€å¯dnsè®°å½•
+10. æå®š
 
-## ¹ØÓÚDNS½âÎöµÄÅäÖÃ
-ÎÒÊÇÔÚ°¢ÀïÔÆÉÏÕûµÄ¡£ËùÒÔÕâÀïÖ»Ìá¹©°¢ÀïÔÆµÄÅäÖÃ·½·¨¡£
+## å…³äºDNSè§£æçš„é…ç½®
+æˆ‘æ˜¯åœ¨é˜¿é‡Œäº‘ä¸Šæ•´çš„ã€‚æ‰€ä»¥è¿™é‡Œåªæä¾›é˜¿é‡Œäº‘çš„é…ç½®æ–¹æ³•ã€‚
 
-	1. ÔÚ°¢ÀïÔÆÉÏÂò¸öÓòÃû¡£
-	2. ÔÚ `ÔÆ½âÎöDNS/ÓòÃû½âÎö/½âÎöÉèÖÃ `ÀïÃæÉèÖÃÁ½¸ö¼ÇÂ¼
-		2.1¡¢ns	A `ÄãµÄdnslogÖ÷»úIP`
-		2.2¡¢\*	A `ÄãµÄdnslogÖ÷»úIP`
-	3. ÔÚ `×Ô¶¨ÒåDNS Host`ÖĞÉèÖÃÄãµÄ `dnslogÖ÷»úIP`
-	4. ÔÚ `DNSĞŞ¸Ä` ÖĞÌí¼ÓÁ½ÌõDNS½âÎöÂ·¾¶£¬µÚÒ»¸öÓÃÄãµÄ`dnslogÖ÷»úIP`£¬µÚ¶ş¸öÑ¡¸öÄÜÓÃµÄ¾ÍĞĞ¡£
-	5. ÒÔÉÏËÄ²½¾Í¸ã¶¨ÁË¡£
+	1. åœ¨é˜¿é‡Œäº‘ä¸Šä¹°ä¸ªåŸŸåã€‚
+	2. åœ¨ `äº‘è§£æDNS/åŸŸåè§£æ/è§£æè®¾ç½® `é‡Œé¢è®¾ç½®ä¸¤ä¸ªè®°å½•
+		2.1ã€ns	A `ä½ çš„dnslogä¸»æœºIP`
+		2.2ã€*	A `ä½ çš„dnslogä¸»æœºIP`
+	3. åœ¨ `è‡ªå®šä¹‰DNS Host`ä¸­è®¾ç½®ä½ çš„ `dnslogä¸»æœºIP`
+	4. åœ¨ `DNSä¿®æ”¹` ä¸­æ·»åŠ ä¸¤æ¡DNSè§£æè·¯å¾„ï¼Œç¬¬ä¸€ä¸ªç”¨ä½ çš„`dnslogä¸»æœºIP`ï¼Œç¬¬äºŒä¸ªé€‰ä¸ªèƒ½ç”¨çš„å°±è¡Œã€‚
+	5. ä»¥ä¸Šå››æ­¥å°±æå®šäº†ã€‚
 
-## Ê¹ÓÃ²½Öè
-1. ÔËĞĞ `python manager.py createsuperuser` ĞÂ½¨Ò»¸öÕË»§¡£
-2. ´Ó `api/user/login` ´¦µÇÂ¼»ñÈ¡`JWTToken`£¬TokenÓĞĞ§ÆÚÎŞÏŞ
-3. ÔÚheaderÖĞ¼ÓÒ»¸ö`Authorization: JWT xxxxx`£¬ÆäÖĞ`xxxxx`ÎªµÚ¶ş²½»ñµÃµÄtoken£¬·ÃÎÊ`/api/verify?q=ÓòÃû`»ñÖª°Ğ»úÊÇ·ñÖ´ĞĞÃüÁî¡£
+## ä½¿ç”¨æ­¥éª¤
+1. è¿è¡Œ `python manager.py createsuperuser` æ–°å»ºä¸€ä¸ªè´¦æˆ·ã€‚
+2. ä» `api/user/login` å¤„ç™»å½•è·å–`JWTToken`ï¼ŒTokenæœ‰æ•ˆæœŸæ— é™
+3. åœ¨headerä¸­åŠ ä¸€ä¸ª`Authorization: JWT xxxxx`ï¼Œå…¶ä¸­`xxxxx`ä¸ºç¬¬äºŒæ­¥è·å¾—çš„tokenï¼Œè®¿é—®`/api/verify?q=åŸŸå`è·çŸ¥é¶æœºæ˜¯å¦æ‰§è¡Œå‘½ä»¤ã€‚
 
-PS£ºÈç¹ûÊÇÏëÀûÓÃDNSLog´øÊı¾İ³öÀ´£¬¿ÉÒÔÔÚ`admin/`£¬ÀûÓÃĞÂ½¨µÄÕË»§µÇÂ¼£¬ÔÚ`dns log`±êÇ©ÏÂ¾ÍÊÇ½üÆÚËùÓĞµÄdnsÇëÇóÁĞ±í¡£
+PSï¼šå¦‚æœæ˜¯æƒ³åˆ©ç”¨DNSLogå¸¦æ•°æ®å‡ºæ¥ï¼Œå¯ä»¥åœ¨`admin/`ï¼Œåˆ©ç”¨æ–°å»ºçš„è´¦æˆ·ç™»å½•ï¼Œåœ¨`dns log`æ ‡ç­¾ä¸‹å°±æ˜¯è¿‘æœŸæ‰€æœ‰çš„dnsè¯·æ±‚åˆ—è¡¨ã€‚
